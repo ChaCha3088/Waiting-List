@@ -26,8 +26,4 @@ router.post('/:foodID/:userID', (req, res, next) => {
 
 
 
-
-
-//대기자로 이미 등록돼있으면 거절하는 기능도 추가해야함
-
 module.exports = router;
