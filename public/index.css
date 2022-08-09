@@ -1,0 +1,70 @@
+h1 {
+    color: rgb(142, 138, 201);
+    text-align: center;
+    background-color: midnightblue;
+    padding : 30px;
+}
+a {
+    text-decoration: none;
+    color:rgb(142, 138, 201);
+
+}
+.footer{
+    background-color: midnightblue;
+    align-items: center;
+    overflow: auto;
+}
+.footer a{
+    padding: 20px;
+    display:inline-block;
+    float: initial;
+    
+}
+.footer a:hover{
+    color: white;
+}
+
+.index{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+}
+.waiting{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+}
+.ticket{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+}
+.resto .card{
+    background-color: white;
+    border-radius: 10px;
+    font-size: 30pt;
+    list-style: none;
+}
+.resto .card:hover{
+    background-color: rgb(222, 221, 243);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.img{
+    width: 140px;
+    height: 140px;
+    padding: 20px;
+    border-radius: 50%;
+}
+.menu{
+    color: midnightblue;
+}
+
+.resto .card .number{
+    font-size: 20pt;
+    color: white;
+    background-color: midnightblue;
+    padding: 10px;
+    display: inline-block;
+}
