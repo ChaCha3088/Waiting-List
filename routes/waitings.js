@@ -23,6 +23,9 @@ router.post('/:foodID/:userID', (req, res, next) => {
     const ticket = WaitingLists.createWaiting(foodID, userID);
     res.json(ticket);
 });
+
+
+
 //대기 등록 버튼을 누르면 그 가게의 foodID와 userID, 그리고 Timestamp를 전달받아 waitingLists.js에 기록
 //router.post("/waitings/:userID", );
 //대기 등록 후 userID와 함께 tickets.js로 redirect
