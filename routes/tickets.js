@@ -1,6 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 const path = require('path');
+const WaitingLists = require('../models/waitingLists');
+
+
 
 router.get("/:foodID/:userID", (req, res, next) => {
     //foodID와 userID에 가게이름 넘어와야할 듯?
@@ -12,7 +15,8 @@ router.get("/:foodID/:userID", (req, res, next) => {
 
 
 router.delete("/:foodID/:userID", (req, res, next) => {
-    //사장님이 완료 버튼 눌러주어야 함
+    //사장님이 완료 버튼 누르면
+    const ticket = WaitingLists.deleteWaiting(foodID, userID);
 });
 
 

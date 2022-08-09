@@ -3,6 +3,8 @@ const router = Router();
 const path = require('path');
 const WaitingLists = require('../models/waitingLists');
 
+
+
 router.get("/:foodID/:userID", (req, res, next) => {
     res.sendFile('waitings.html', { root: path.join(__dirname, '../public') });
 
