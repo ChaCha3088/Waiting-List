@@ -59,11 +59,12 @@ exports.createWaiting = (foodID, userID) => {
 
 
 exports.deleteWaiting = (foodID, userID) => {
-    이 
+    
+}
 
 
-
-exports.bringInfo = (foodID, userID) => {
+exports.bringInfo = (foodID) => {
     //?waitingLists.js에서 가게 이름, 대기자 수 가져오기
-    //?foodID가 일치하는 것 찾고, 대기자 수 return
+    let info = waitingLists.find(e => e.foodID == `${foodID}`);
+    return info;
 }

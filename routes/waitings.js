@@ -9,8 +9,10 @@ router.get("/:foodID/:userID", (req, res, next) => {
     res.sendFile('waitings.html', { root: path.join(__dirname, '../public') });
 
 
+    const foodID = req.params.foodID;
+    const infoResult = WaitingLists.bringInfo(foodID);
+    res.json(infoResult);
 
-    //WaitingLists.bringInfo()
     //?waitingLists.js에서 가게 이름, 대기자 수 가져오기
     //?foodID가 같은 것 찾고, 대기자 수 return
 });

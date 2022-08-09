@@ -16,6 +16,7 @@ router.get("/:userID", (req, res, next) => {
 
     //현재 대기인원 보여주기
     const waitingLists = WaitingLists.countWaitingPeopleAll();
+    res.json(waitingLists);
 
 
 
@@ -27,7 +28,7 @@ router.get("/:userID", (req, res, next) => {
     res.json(waitingLists);
 
 
-    
+
     //프론트엔드
     //1. 이 json 응답을
     //클라이언트가 받아서 가공하여 페이지에 넣는 코드 작성 요망
