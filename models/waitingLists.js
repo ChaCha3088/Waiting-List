@@ -1,9 +1,13 @@
+//?서버 재시작할 경우 waitingLists의 userIDAndTimestamp 초기화 해야함
+
+
+
 let waitingLists = [
     {
         "foodID": 1,
         "foodName": "회오리 감자",
         "userIDAndTimestamp": {
-            3483: 202205061800,
+            3483: 202204061800,
             5012: 202208081800,
         },
     },
@@ -11,15 +15,15 @@ let waitingLists = [
         "foodID": 2,
         "foodName": "누구네 가게 1",
         "userIDAndTimestamp": {
-            3483: 202205061800,
+            5675: 202205061800,
         },
     },
     {
         "foodID": 3,
         "foodName": "누구네 가게 2",
         "userIDAndTimestamp": {
-            3483: 202205061800,
-            3560: 340348035803,
+            7895: 202205071800,
+            3560: 202205091100,
         },
     },
 ];
@@ -34,7 +38,7 @@ exports.countWaitingPeopleAll = () => {
                 'foodID': item['foodID'],
                 'foodName': item['foodName'],
                 'userIDAndTimestamp': item['userIDAndTimestamp'],
-                'userCount':Object.keys(item['userIDAndTimestamp']).length,
+                'userCount': Object.keys(item['userIDAndTimestamp']).length,
             });
     });
     return Lists;
@@ -59,12 +63,19 @@ exports.createWaiting = (foodID, userID) => {
 
 
 exports.deleteWaiting = (foodID, userID) => {
+    userID = Number(userID);
+
+    const index = waitingLists.findIndex((list) => list.foodID == foodID);
+    if (index < 0) {
+        throw new Error('User not found for delete.');
+    }
     
+    delete waitingLists[index].userIDAndTimestamp[`${userID}`];
 }
 
 
 exports.bringInfo = (foodID) => {
-    //?waitingLists.js에서 가게 이름, 대기자 수 가져오기
+    //waitingLists.js에서 가게 이름, 대기자 수 가져오기
     let info = waitingLists.find(e => e.foodID == `${foodID}`);
     return info;
 }

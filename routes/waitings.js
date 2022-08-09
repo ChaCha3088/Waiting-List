@@ -30,4 +30,13 @@ router.post('/:foodID/:userID', (req, res, next) => {
 
 
 
+router.get('/:foodID/:userID/debug', (req, res, next) => {
+    const foodID = req.params.foodID;
+    const userID = req.params.userID;
+    const deletition = WaitingLists.deleteWaiting(foodID, userID);
+    res.json(deletition);
+});
+
+
+
 module.exports = router;
