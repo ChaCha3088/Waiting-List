@@ -17,12 +17,11 @@ router.get("/:foodID/:userID", (req, res, next) => {
 
 
 
-router.delete("/:foodID/:userID", (req, res, next) => {
-    //사장님이 완료 버튼 누르거나, 사용자가 대기 취소 버튼을 누르면
-
+router.delete('/:foodID/:userID', (req, res, next) => {
     const foodID = req.params.foodID;
     const userID = req.params.userID;
-    const ticket = WaitingLists.deleteWaiting(foodID, userID);
+    const deletition = WaitingLists.deleteWaiting(foodID, userID);
+    res.json(deletition);
 });
 
 
