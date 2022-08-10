@@ -1,0 +1,99 @@
+h1{
+    color:rgb(142, 138, 201);
+    text-align: center;
+    background-color: midnightblue;
+    padding: 30px;
+}
+
+h2{
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    flex-direction: row;
+
+
+    color:rgb(142, 138, 201);
+    text-align: center;
+    background-color: midnightblue;
+    padding: 20px;
+
+}
+
+
+
+
+a{
+    text-decoration:  none;
+    color:rgb(142, 138, 201);
+
+
+}
+.footer{
+    
+    background-color: midnightblue;
+    align-items: center;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 10vh;
+    flex-direction: row;
+
+}
+
+.footer a{
+    padding:20px;
+    display: inline-block;
+    
+
+
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.index{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+
+}
+
+.waiting{
+    padding-left:10px;
+    padding-right:10px;
+    margin-left:10px;
+
+}
+
+.ticket{
+    padding-left:10px;
+    padding-right:10px;
+    margin-left:10px;
+
+   
+}
+
+.img{
+    width:140px;
+    height:140px;
+    padding:20px;
+    border-radius: 50%;
+}
+
+.btn{
+
+    font-size: 15pt;
+    color: white;
+    background-color: midnightblue;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="end.css">
+    <script src="https://kit.fontawesome.com/6e66ce9a53.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/6e66ce9a53.html"></head>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <title>elementExplain</title>
+</head>
+
+<body>
+     <div class="flrex-container">
+     <h1 >개인의 대기 번호</h1>
+
+
+        <div>
+            <h2>사용이 완료되었습니다</h2>
+         </div>
+           
+                    
+
+          
+
+             
+    
+
+
+            <div class="footer">
+              <a href="" id = index><i class="fa-solid fa-magnifying-glass fa-2x"></i></a>
+              <a href="" id = waiting><i class="fa-solid fa-house fa-2x"></i></a>
+              <a href="" id = ticket><i class="fa-solid fa-ticket-simple fa-2x"></i></a>
+          </div>
+  </div>
+
+   <script>
+    $.ajax({
+
+    type: "GET",
+    url: '/test.jsp',//"ajaxData.jsp?type=1",
+    dataType: "text",
+    error: function () {
+    alert('연결오류');
+     },
+    success: function (data) {
+    alert("통신데이터 값 : " + data);
+    $("#dataArea").html(data);
+     }
+
+    
+
+});
+
+  
+ 
+
+
+
+    
+  </script>
+
+
+
+
+
+</body>
+
+
+
+</html>
