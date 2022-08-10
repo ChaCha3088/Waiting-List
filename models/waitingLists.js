@@ -1,5 +1,5 @@
 //?서버 재시작할 경우 waitingLists의 userIDAndTimestamp 초기화 해야함
-
+//?index.js에서?
 
 
 let waitingLists = [
@@ -30,7 +30,7 @@ let waitingLists = [
 
 
 
-exports.countWaitingPeopleAll = () => {
+exports.showAll = () => {
     let Lists=[];
     waitingLists.map(
         (item) => {

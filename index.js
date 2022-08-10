@@ -2,6 +2,7 @@ const express = require("express");
 const listRouter = require('./routes/lists');
 const ticketsRouter = require('./routes/tickets');
 const waitingsRouter = require('./routes/waitings');
+const WaitingLists = require('/models/waitingLists');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
     //사용자 ID 발급
     const mkID = Math.floor(Math.random() * 100000);
     
+    //redirect
     res.redirect(`/lists/${mkID}`)
 })
 

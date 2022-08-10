@@ -11,6 +11,7 @@ router.get("/:foodID/:userID", (req, res, next) => {
     const foodID = req.params.foodID;
     const infoResult = WaitingLists.bringInfo(foodID);
     res.json(infoResult);
+    //?html와 css 보내주기
 });
 
 
