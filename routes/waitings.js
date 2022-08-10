@@ -5,19 +5,23 @@ const WaitingLists = require('../models/waitingLists');
 
 
 
-router.get("/:foodID/:userID", (req, res, next) => {
-    res.sendFile('waitings.html', { root: path.join(__dirname, '../public') });
-
+router.get("/:foodID/json", (req, res, next) => {
     const foodID = req.params.foodID;
     const infoResult = WaitingLists.bringInfo(foodID);
     res.json(infoResult);
-    //?html와 css 보내주기
+});
+
+
+
+router.get("/:foodID/:userID", (req, res, next) => {
+    res.sendFile('waitings.html', { root: path.join(__dirname, '../public') });
 });
 
 
 
 //대기자 등록 기능
 router.post('/:foodID/:userID', (req, res, next) => {
+//router.get('/:foodID/:userID/debug', (req, res, next) => {
     const currentTime = WaitingLists.currentTimeIs();
     const foodID = req.params.foodID;
     const userID = req.params.userID;

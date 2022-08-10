@@ -2,7 +2,10 @@ const express = require("express");
 const listRouter = require('./routes/lists');
 const ticketsRouter = require('./routes/tickets');
 const waitingsRouter = require('./routes/waitings');
-const WaitingLists = require('/models/waitingLists');
+const WaitingLists = require('./models/waitingLists');
+
+//대기자 리스트 초기화
+WaitingLists.initialize();
 
 const app = express();
 

@@ -7,7 +7,7 @@ const WaitingLists = require('../models/waitingLists');
 
 
 
-router.get("/:userID", (req, res, next) => {
+router.get("/json", (req, res, next) => {
     //userID 가져오기
     const userID = req.params.userID;
 
@@ -20,20 +20,15 @@ router.get("/:userID", (req, res, next) => {
 
     //응답부
     res.json(resultAll);
+});
+
+
+
+router.get("/:userID", (req, res, next) => {
     //HTML 보내기
     res.sendFile('lists.html', { root: path.join(__dirname, '../public') });
 });
 
 
 
-//?메인, 식당 페이지 랜더
-
-
-
-
 module.exports = router;
-
-
-
-
-

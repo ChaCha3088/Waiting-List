@@ -1,7 +1,3 @@
-//?서버 재시작할 경우 waitingLists의 userIDAndTimestamp 초기화 해야함
-//?index.js에서?
-
-
 let waitingLists = [
     {
         "foodID": 1,
@@ -58,7 +54,7 @@ exports.createWaiting = (foodID, userID, currentTime) => {
     if (isThere) {
         return `/tickets/${foodID}/${userID}`;
     } else {
-        console.log({userID: currentTime});
+        console.log(waitingLists);
         waitingLists[index].userIDAndTimestamp[`${userID}`] = currentTime;
         console.log(waitingLists);
         return `/tickets/${foodID}/${userID}`;        
@@ -79,10 +75,12 @@ exports.deleteWaiting = (foodID, userID) => {
 }
 
 
-exports.bringInfo = (foodID) => {
+exports.bringInfo = (foodID, userID) => {
     //waitingLists.js에서 가게 이름, 대기자 수 가져오기
+    //? userID가 몇 번째인지
     let info = waitingLists.find(e => e.foodID == `${foodID}`);
-    return info;
+    let infoQueue = Object.keys(info['userIDAndTimestamp']).length;
+    return infoQueue;
 }
 
 
@@ -102,4 +100,21 @@ exports.currentTimeIs = () => {
     let result = dateString + timeString;
 
     return result;
+}
+
+
+
+exports.initialize = () => {
+    waitingLists.map(
+        (item) => {
+            item.userIDAndTimestamp = {};
+    });
+    console.log(waitingLists);
+    return waitingLists;
+}
+
+
+
+exports.showLists = () => {
+    console.log(waitingLists);
 }
