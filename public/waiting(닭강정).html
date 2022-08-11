@@ -7,6 +7,11 @@
    
    <title>Waiting List</title>
    <link rel="stylesheet" href="waiting.css" class="css"  >
+   <script type="text/javascript">
+window.onload = function() {
+	var httpRequest;
+   document.getElementById("ajaxCall").addEventListener('click', () => {
+      httpRequest = new XMLHttpRequest();
 </head>
 <body>
    <h1>식당 별 대기자 리스트</h1>
@@ -39,6 +44,16 @@
          <a href="index.html" id = index><i class="fa-solid fa-magnifying-glass fa-2x"></i></a>
         <a href="waiting.html" id = waiting><i class="fa-solid fa-house fa-2x"></i></a>
     </div>
-    <p id="serverResponse"></p>
+    $.ajax({
+
+        type: "GET",
+        url: "http://localhost:5000/lists/json",
+        dataType: "json",
+        error: function () {
+            alert('통신실패!!');
+        },
+        success: function (data) {
+            console(data);
+    });
 </body>
 </html>
