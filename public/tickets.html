@@ -12,6 +12,40 @@
 
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <title>elementExplain</title>
+    <script type="text/javascript">
+     /* window.onload = function() {
+          var httpRequest;
+
+          document.getElementById("btn").addEbentListener('click', () => {
+            var inputName = document.getElementById("inputName").value;
+
+            httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechante = () => {
+               if(httpRequest.readyState === XMLHttpRequest.DONE) {
+                  if(httpRequest.status == 200) {
+
+                    var result = httpRequest.response;
+
+                  document.getElementById("name").innerText = result.name;
+                  document.getElenemtById("age").innerText = result.age;
+
+                  } else {alert('request Error!')};
+               }
+            };
+
+            httpRequest.open('GET', '/getAgeByName?inputName=' +inputName);
+            httpRequest.responseType = "json";
+            httpRequest.send();
+          
+          
+        });
+      }*/
+
+     
+
+    </script>
+
+
 </head>
 
 <body>
@@ -37,6 +71,8 @@
 
            <div class="waiting">
              <p>
+              
+
                 <a>
                <h2><strong>3번째 대기중</strong> <br />
                 <br />토큰  12345</h2>
@@ -68,24 +104,57 @@
   </div>
 
    <script>
-    $.ajax({
+   $.ajax({
 
     type: "GET",
-    url: '/test.jsp',//"ajaxData.jsp?type=1",
+    url: '/tickets.js',//"ajaxData.jsp?type=1",
     dataType: "text",
     error: function () {
     alert('연결오류');
      },
     success: function (data) {
-    alert("통신데이터 값 : " + data);
-    $("#dataArea").html(data);
+    alert("통신데이터 값 : " + userID);
+    $("#dataArea").html(userID);
      }
 
     
 
 });
 
-  
+function reqAjax1() {
+    $.ajax({
+      url:'reqAjax1',
+      method:'GET',
+      error: function () {
+    alert('연결오류');
+     },
+      success:function(resp) {
+        if(resp == InfoResult){
+          alert("통신데이터 값 : " + resp);
+          $('#req1').text("토큰   " + resp );
+
+        }
+    
+     }
+      }
+    )}
+
+  function reqAjax2 () 
+    var fooidId = $("foodID").val();
+    var userId = $("userID").val();
+    if(foodId.trim() =='' || userId.trim()== ''){
+      return;
+    }
+
+    var sendData = "foodID"+foodID+'&userID'+userID++;
+    $.ajax({
+      url:'reqAjax2',
+      method:'POST'
+      , data: sendData,
+      success:function(resp) {}
+    });
+ 
+   
  
 
 
