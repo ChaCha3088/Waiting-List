@@ -40,6 +40,16 @@
         <a href="ticket.html" id = ticket><i class="fa-solid fa-ticket-simple fa-2x"></i></a>
      
     </div>
-    <p id="serverResponse"></p>
+   $.ajax({
+
+        type: "POST",
+        url: "http://localhost:5000/lists/json",
+        dataType: "json",
+        error: function () {
+            alert('통신실패!!');
+        },
+        success: function (data) {
+            console(data);
+    });
 </body>
 </html>
